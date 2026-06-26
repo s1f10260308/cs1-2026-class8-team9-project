@@ -59,10 +59,12 @@
 .text h2{
     margin-bottom: 20px;
     font-size: 40px;
+    font-family: serif;
 }
 
 .text a{
     display: inline-block;
+    font-family: serif;
     width: 120px;
     padding: 12px;
     color: white;
