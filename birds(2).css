@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;           /* 横並び */
+    width: 100%;
+    height: 100vh;
+}
+
+.card{
+    flex: 1;                 /* 3枚を均等な幅にする */
+    position: relative;
+    overflow: hidden;
+    border-right: 20px solid white;
+}
+
+.card:last-child{
+    border-right: none;
+}
+
+.card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* 画像を切り抜きながら表示 */
+    transition: 0.5s;       /* アニメーション */
+}
+
+.card:hover img{
+    transform: scale(1.1);
+}
+
+.card::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);       /* 背景にフィルターかける */
+    z-index: 1;
+}
+
+.text{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;       /* 背景の前にテキストがくる */
+    transition: 0.4s;
+
+}
+
+.card:hover .text{
+    transform: translate(-50%, -55%);       /* 背景に合わせてテキストも動かす */
+}
+
+.text h2{
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+
+.text a{
+    display: inline-block;
+    width: 120px;
+    padding: 12px;
+    color: white;
+    border: 1px solid white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.text a:hover{
+    background: white;
+    color: black;       /* LOOKにカーソルを合わせると色が変わる */
+}
